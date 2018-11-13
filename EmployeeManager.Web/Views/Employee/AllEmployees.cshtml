@@ -1,0 +1,47 @@
+﻿@model EmployeeManager.Web.Models.EmployeeDisplayModel
+    <h2 style="padding-bottom: 5%;">All Employees</h2>
+    <table class="table table-bordered" >
+        <tr>
+            <th>Employee ID</th>
+            <th>First Name</th>
+            <th>Middle Initial</th>
+            <th>Last Name</th>
+            <th>Hire Date</th>
+            <th>Pay Rate</th>
+            <th>Pay Type</th>
+            <th>Job Title</th>
+            <th>Department</th>
+        </tr>
+
+    @foreach (var e in Model.Employees) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => e.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => e.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => e.MiddleName).ToString().Substring(0, 1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => e.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => e.HireDate).ToString().Split(' ')[0]
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => e.PayRate).ToString().Insert(0, "$")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => e.SalaryType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => e.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => e.Department)
+            </td>
+        </tr>
+    }
+    </table>

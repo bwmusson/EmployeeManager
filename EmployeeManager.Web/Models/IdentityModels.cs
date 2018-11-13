@@ -21,7 +21,7 @@ namespace EmployeeManager.Web.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("EmployeeContext", throwIfV1Schema: false)
         {
         }
 

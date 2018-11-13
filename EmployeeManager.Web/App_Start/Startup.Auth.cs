@@ -1,11 +1,10 @@
-﻿using System;
+﻿using EmployeeManager.Web.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Owin;
-using EmployeeManager.Web.Models;
+using System;
 
 namespace EmployeeManager.Web
 {

@@ -1,0 +1,43 @@
+﻿@using EmployeeManager.Shared.Services
+@model EmployeeManager.Web.Models.EmployeeDisplayModel
+<h2 style="padding-bottom: 5%;">All Employees</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Department</th>
+        <th>Years of Employment</th>
+        <th>Anniversary</th>
+    </tr>
+    @foreach (var e in Model.Employees.OrderBy(m => m.HireDate))
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => e.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => e.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => e.Department)
+            </td>
+            @{
+                string yearsEmployed = new FullYearService(new DateTimeService()).HowManyYearsEmployed(e).ToString();
+            }
+            <td>
+                @Html.DisplayFor(modelItem => yearsEmployed)
+            </td>
+            @{
+                string hireDateString = e.HireDate.ToString("M");
+                if (e.HireDate.DayOfYear == DateTime.Today.DayOfYear)
+                {
+                    hireDateString = "Today (" + e.HireDate.ToString("M") + ")";
+                }
+            }
+            <td>
+                @Html.DisplayFor(modelItem => hireDateString)
+            </td>
+
+        </tr>
+    }
+</table>

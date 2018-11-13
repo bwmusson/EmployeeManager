@@ -1,0 +1,123 @@
+﻿<!-- =========================================================
+
+Ben Musson
+
+Windows 10
+Microsoft Visual Studio 2017 Enterprise
+
+CIS 174
+Week 5 User Story
+
+Program Description: This program displays a form for creating an employee
+record in a database, and then saves the record to the database.
+
+Academic Honesty:
+I attest that this is my original work.
+I have not used unauthorized source code, either modified or unmodified.
+I have not given other fellow student(s) access to my program.
+
+=========================================================== -->
+@model EmployeeManager.Web.Models.CreateEmployeeModel
+
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post))
+    {
+        <div class="row row-eq-height">
+            <div class="container col-md-12">
+                <h2>Create Employee</h2>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+            <div class="container col-md-6 float-md-left" style="margin-top: 5%;">
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.MiddleName, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.BirthDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.HireDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.HireDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.HireDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="container col-md-6 float-md-right" style="margin-top: 5%;">
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.Department, htmlAttributes: new {@class = "control-label col-md-4"})
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.Department, new {htmlAttributes = new {@class = "form-control"}})
+                        @Html.ValidationMessageFor(model => model.Department, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.JobTitle, htmlAttributes: new {@class = "control-label col-md-4"})
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.JobTitle, new {htmlAttributes = new {@class = "form-control"}})
+                        @Html.ValidationMessageFor(model => model.JobTitle, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.PayRate, htmlAttributes: new {@class = "control-label col-md-4"})
+                    <div class="col-md-7 clearfix">
+                        @Html.EditorFor(model => model.PayRate, new {htmlAttributes = new {@class = "form-control col-md-6 float-left"}})
+                        @Html.EnumDropDownListFor(model => model.SalaryType, "Salary Type", htmlAttributes: new {@class = "form-control col-md-5 float-md-right", @style = "margin-left: 5%;"})
+                        @Html.ValidationMessageFor(model => model.PayRate, "", new {@class = "text-danger text-left"})
+                        @Html.ValidationMessageFor(model => model.SalaryType, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.EmployeeId, htmlAttributes: new {@class = "control-label col-md-4"})
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.EmployeeId, new {htmlAttributes = new {@class = "form-control"}})
+                        @Html.ValidationMessageFor(model => model.EmployeeId, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    @Html.LabelFor(model => model.AvailableHours, htmlAttributes: new {@class = "control-label col-md-4"})
+                    <div class="col-md-7">
+                        @Html.EditorFor(model => model.AvailableHours, new {htmlAttributes = new {@class = "form-control"}})
+                        @Html.ValidationMessageFor(model => model.AvailableHours, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-5"></div>
+                    <span class="col-md-3">
+                        <input type="submit" value="Create" class="btn btn-primary btn-block"/>
+                    </span>
+                    <span class="col-md-3">
+                        <input type="reset" value="Clear" class="btn btn-block"/>
+                    </span>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+    }

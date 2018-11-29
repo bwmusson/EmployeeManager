@@ -138,5 +138,34 @@ namespace EmployeeManager.Shared.Orchestrators
 
             return true;
         }
+
+        public async Task<EmployeeViewModel> GetEmployee(string id)
+        {
+            var employee = await _employeeContext.Employees
+                .Where(x => x.EmployeeId.Equals(id))
+                .FirstOrDefaultAsync();
+            if (employee == null)
+            {
+                return new EmployeeViewModel();
+            }
+
+            var viewModel = new EmployeeViewModel
+            {
+                RecordGuid = employee.RecordGuid,
+                FirstName = employee.FirstName,
+                MiddleName = employee.MiddleName,
+                LastName = employee.LastName,
+                BirthDate = employee.BirthDate.Date,
+                HireDate = employee.HireDate.Date,
+                Department = employee.Department,
+                JobTitle = employee.JobTitle,
+                PayRate = employee.PayRate,
+                SalaryType = employee.SalaryType,
+                EmployeeId = employee.EmployeeId,
+                AvailableHours = employee.AvailableHours
+            };
+
+            return viewModel;
+        }
     }
 }

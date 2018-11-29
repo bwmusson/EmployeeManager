@@ -29,5 +29,6 @@ namespace EmployeeManager.Shared.Orchestrators.Interfaces
         Task<int> CreateEmployee(EmployeeViewModel employee);
         Task<bool> UpdateEmployee(EmployeeViewModel employee);
         Task<EmployeeViewModel> SearchEmployee(string searchString);
+        Task<EmployeeViewModel> GetEmployee(string id);
     }
 }

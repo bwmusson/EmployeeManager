@@ -13,11 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManager.Domain", "E
 		{EAF33F5F-BBDE-4653-9A40-585800C1CCB7} = {EAF33F5F-BBDE-4653-9A40-585800C1CCB7}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManager.Api", "EmployeeManager.Api\EmployeeManager.Api.csproj", "{9ADB4076-FBA4-4435-87CD-86614CFBE440}"
-	ProjectSection(ProjectDependencies) = postProject
-		{F1A4C293-82B3-495F-A59F-D800EFF34910} = {F1A4C293-82B3-495F-A59F-D800EFF34910}
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManager.Enums", "EmployeeManager.Enums\EmployeeManager.Enums.csproj", "{EAF33F5F-BBDE-4653-9A40-585800C1CCB7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManager.Test", "EmployeeManager.Test\EmployeeManager.Test.csproj", "{0F4945AF-82BF-4C0A-8E67-295F3596C03D}"
@@ -27,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManager.Shared", "E
 		{EAF33F5F-BBDE-4653-9A40-585800C1CCB7} = {EAF33F5F-BBDE-4653-9A40-585800C1CCB7}
 		{A4A63DF5-9CD6-4AF0-B2E1-74D90B3423E6} = {A4A63DF5-9CD6-4AF0-B2E1-74D90B3423E6}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManager.Api", "EmployeeManager.Api\EmployeeManager.Api.csproj", "{F6F25894-EBFC-437D-87DC-B8A025A13AC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +39,6 @@ Global
 		{A4A63DF5-9CD6-4AF0-B2E1-74D90B3423E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4A63DF5-9CD6-4AF0-B2E1-74D90B3423E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4A63DF5-9CD6-4AF0-B2E1-74D90B3423E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9ADB4076-FBA4-4435-87CD-86614CFBE440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9ADB4076-FBA4-4435-87CD-86614CFBE440}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9ADB4076-FBA4-4435-87CD-86614CFBE440}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9ADB4076-FBA4-4435-87CD-86614CFBE440}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EAF33F5F-BBDE-4653-9A40-585800C1CCB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EAF33F5F-BBDE-4653-9A40-585800C1CCB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF33F5F-BBDE-4653-9A40-585800C1CCB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -58,6 +51,10 @@ Global
 		{F1A4C293-82B3-495F-A59F-D800EFF34910}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1A4C293-82B3-495F-A59F-D800EFF34910}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1A4C293-82B3-495F-A59F-D800EFF34910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F25894-EBFC-437D-87DC-B8A025A13AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F25894-EBFC-437D-87DC-B8A025A13AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F25894-EBFC-437D-87DC-B8A025A13AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F25894-EBFC-437D-87DC-B8A025A13AC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

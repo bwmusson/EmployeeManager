@@ -1,0 +1,20 @@
+<h2>All Employees</h2>
+
+<input type="button" id="loadTable" value="Load Data" style="margin: 10px;" (click)="this.getEmployees()"/>
+<div id="table" >
+<table>
+  <thead>
+    <tr>
+      <td>Employee Id</td>
+      <td>Full Name</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.EmployeeId}}</td>
+      <td>{{employee.FullName}}</td>
+    </tr>
+    <tr *ngFor="let employee of employees" [class.selected]="employee === selectedEmployee" (click)="onSelected(employee)">
+  </tbody>
+</table>
+</div>

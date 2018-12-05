@@ -1,0 +1,12 @@
+<input type="text" id="employeeId" style="margin: 10px;" #employeeId />
+<input type="button" value="Search" (click)="this.getSingleEmployee(employeeId.value)"/>
+<span id="error" style="color: red; font-style: italic; margin-left: 15px;"></span>
+
+<div *ngIf="employeedetail">
+  <h2>{{employeedetail.FirstName + " " + employeedetail.LastName}} Details</h2>
+  <div><span>First Name: </span>{{employeedetail.FirstName}}</div>
+  <div><span>Middle Name: </span>{{employeedetail.MiddleName}}</div>
+  <div><span>Last Name: </span>{{employeedetail.LastName}}</div>
+  <div><span>Birth Date: </span>{{employeedetail.BirthDate}}</div>
+  <div><span>Department: </span>{{employeedetail.Department}}</div>
+</div>
